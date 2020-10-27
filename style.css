@@ -1,0 +1,408 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./triv.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: none;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  stroke: 1px solid black;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -1;
+}
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+#category {
+  width: 20%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+#options {
+  margin-bottom: 2%;
+}
+#category:focus {
+  outline: none;
+}
+#category option {
+  width: 20%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  opacity: 0.2;
+}
+
+#difficulty {
+  width: 20%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+#difficulty option {
+  width: 40%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  opacity: 0.2;
+}
+h1 {
+}
+.container {
+  margin: 5% 25%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#question {
+  background-color: rgba(0, 97, 89, 0.75);
+  box-shadow: 4px 4px black;
+}
+
+#dumb {
+  margin: 10% auto 10% auto;
+  font-size: 1.5rem;
+  border: 2px solid white;
+  display: none;
+  width: 100%;
+  border-radius: 20px;
+}
+#score {
+  font-size: 2em;
+  margin-bottom: 0;
+
+  display: 'none';
+}
+#timer {
+  font-size: 2em;
+  margin-top: 0;
+}
+.slideDown {
+  animation: slideDown 1s;
+}
+
+.slideInLeft {
+  animation: slideInLeft 1s;
+}
+p {
+  box-shadow: 1px 1px black;
+  text-shadow: 3px 3px black;
+}
+
+#a1:active,
+#a2:active,
+#a3:active,
+#a4:active {
+  transform: translate(3px, 3px);
+}
+
+#a1,
+#a2,
+#a3,
+#a4 {
+  background-color: rgba(0, 97, 89, 0.75);
+  text-shadow: 2px black;
+  cursor: pointer;
+}
+
+#answers {
+  text-shadow: 3px black;
+}
+
+#xs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+#x1,
+#x2,
+#x3 {
+  transform: scale(0.5);
+  display: none;
+  flex-direction: row;
+}
+
+.stayBig {
+  transform: scale(3);
+}
+.wrongAnswers {
+  animation: slideOutRight 3s;
+}
+
+.rightAnswer {
+  animation: big 3s;
+}
+
+.slideOutRight {
+  animation: slideOutRight 1s;
+}
+
+.slideUp {
+  animation: slideUp 2.5s;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+#dots {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20% auto 1% auto;
+  transform: scale(1.5);
+}
+
+#dots h1 {
+  -webkit-text-stroke: 3px rgba(14, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 1);
+  text-shadow: 5px 5px rgba(255, 27, 167, 0.5);
+  font-size: 6em;
+  margin: 20% auto 1% auto;
+}
+#btn {
+  margin: 0% auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  width: 40%;
+  height: 20%;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 4px 4px black;
+  outline: none;
+  text-align: center;
+}
+
+#btn:active {
+  transform: translate(2px, 2px);
+  outline: none;
+}
+#btn2 {
+  margin: 0% auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  width: 40%;
+  height: 20%;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 4px 4px black;
+  outline: none;
+  text-align: center;
+}
+
+#btn2:active {
+  transform: translate(2px, 2px);
+  outline: none;
+}
+#questions {
+  margin: 10% auto 0 auto;
+}
+
+.fall {
+  animation: fall 1s;
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translate(0);
+  }
+  80% {
+    transform: translate(300%);
+  }
+  100% {
+    transform: translate(300%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translate(0%, -300%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translate(0%);
+  }
+  80% {
+    transform: translate(0%, -500%);
+  }
+  100% {
+    transform: translate(0%, -500%);
+  }
+}
+
+@keyframes big {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes kindaBig {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.75);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(0%, 3000%);
+  }
+}
+/* 
+@keyframes quickSlide {
+  0% {
+    transform: translate(0%);
+  }
+  50% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(300%);
+  }
+} */
+@media screen and (max-width: 1024px) {
+  #btn2 {
+    width: 75%;
+    font-size: 1.5rem;
+  }
+
+  .rightAnswer {
+    animation: kindaBig 3s;
+  }
+
+  .container {
+    margin: 5% 15%;
+  }
+  #dumb {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 675px) {
+  #dumb {
+    width: 75%;
+  }
+  #btn {
+    width: 75%;
+  }
+  #a1,
+  #a2,
+  #a3,
+  #a4 {
+    background-color: rgba(0, 97, 89, 0.75);
+    text-shadow: 2px black;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  #question {
+    margin-top: 20%;
+
+    width: 100%;
+  }
+  #dumb h1 {
+    font-size: 1.5rem;
+  }
+
+  #category {
+    width: 75%;
+  }
+
+  #difficulty {
+    width: 75%;
+  }
+  #body::after {
+    height: 200%;
+  }
+  #dots h1 {
+    padding-top: 15%;
+    margin-bottom: 5%;
+    font-size: 4em;
+  }
+}
+@media screen and (max-width: 425px) {
+  #questions {
+    font-size: 0.6rem;
+  }
+}

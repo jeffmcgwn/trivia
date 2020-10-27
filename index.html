@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Trivia Night!</title>
+  </head>
+
+  <body>
+    <div class="background"></div>
+    <div class="container">
+      <div id="dots">
+        <h1>Trivia Night!</h1>
+        <div id="options">
+          <label for="category">Select a Category</label>
+          <select name="Category" id="category">
+            <option value="0">General Knowledge</option>
+
+            <option value="1">Music</option>
+
+            <option value="2">Video Games</option>
+
+            <option value="3">Geography</option>
+            <option value="4">History</option>
+          </select>
+          <br />
+          <label for="difficulty">Difficulty:</label>
+          <select name="difficulty" id="difficulty">
+            <option value="0">Easy</option>
+            <option value="1">Medium</option>
+            <option value="2">Hard</option>
+          </select>
+          <br />
+        </div>
+        <button id="btn">Start</button>
+      </div>
+    </div>
+      <div id="questions">
+        <h1 id="question" class="slideDown"></h1>
+      </div>
+      <div id="dumb"></div>
+      <div class="container">
+
+      <h2 id="answers">
+        <p id="a1" class="slideInLeft"></p>
+        <p id="a2" class="slideInLeft"></p>
+        <p id="a3" class="slideInLeft"></p>
+        <p id="a4" class="slideInLeft"></p>
+      </h2>
+
+      <div id="score"></div>
+      <div id="timer"></div>
+
+      <div id="xs">
+        <img src="x.png" id="x1" width="100px" height="100px" alt="" />
+        <img src="x.png" id="x2" width="100px" height="100px" alt="" />
+        <img src="x.png" id="x3" width="100px" height="100px" alt="" />
+      </div>
+    </div>
+  </div>
+    <script src="trivia.js"></script>
+  </body>
+</html>
